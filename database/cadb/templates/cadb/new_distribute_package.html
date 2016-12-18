@@ -1,0 +1,124 @@
+{% extends 'cadb/index.html' %}
+{% block title %} Student - {{ block.super }} {% endblock %}
+{%block content%}
+<div class="container"
+<!--BUDGET SECTION-->
+<div class="col-md-8 text-center" id="bigreportgenerator2">
+	<h2>REMAINING BUDGET FOR 2016:</h2>
+	<h2 id="amount">${{ budget.amount }}</h2>
+	<form method="GET" action="budget_report/">
+		<div class="input-group">
+			<span class="input-group-addon">
+				Budget Year:
+			</span>
+			<input name="budget_date" id="budget_Date" type="date" class="form-control" value="2016-01-01">
+		</div>
+		<br>
+		<button type="submit" class="btn btn-primary" id="new_report">Report</button>
+		<br>
+
+	</form>
+</div>
+</div>
+<div class="container" >
+			<div class="col-md-8"id="bigreportgenerator">
+				<div class="card report-card">
+				<h1 class="card-title text-center" id="distributionheader">Distribute Financial Aid</h1>
+		  </br>
+		      <form method="POST" action="" id="newdistroform">
+		        {% csrf_token %}
+						<div class="row">
+		          <div class="form-group-row" id="ssn">
+		            <label for="students" class="col-sm-2 col-form-label">SSN</label>
+		            <div class="col-sm-6">
+		              <input name="student_ssn" type="number" class="form-control" id="studentssn" placeholder=000>
+		            </div>
+		          </div>
+		        </br>
+		      </br>
+		    </br>
+		          <div class="form-group-row" id="fn">
+		            <label for="studentf" class="col-sm-2 col-form-label">First Name</label>
+		            <div class="col-sm-6">
+		              <input name="f_name" type="text" class="form-control" id="studentf" placeholder="First Name">
+		            </div>
+		          </div>
+		        </br>
+		      </br>
+		    </br>
+
+		        <div class="form-group-row" id="ln">
+		          <label for="studentl" class="col-sm-2 col-form-label">Last Name</label>
+		          <div class="col-sm-6">
+		            <input name="l_name" type="text" class="form-control" id="studentl" placeholder="Last Name">
+		          </div>
+		        </div>
+		      </br>
+		    </br>
+		  </br>
+		      <div class="form-group-row" id="fn">
+		        <label for="studentc" class="col-sm-2 col-form-label">City</label>
+		        <div class="col-sm-6">
+		          <input name="student_city" type="text" class="form-control" id="studentc"value="Bakersfield">
+		        </div>
+		      </div>
+		    </br>
+		  </br>
+		</br>
+
+		    <div class="form-group-row" id="fn">
+		      <label for="studentst" class="col-sm-2 col-form-label">State</label>
+		      <div class="col-sm-6">
+		        <input name="student_state" type="text" class="form-control" id="studentst" value="ca">
+		      </div>
+		    </div>
+		  </br>
+		</br>
+		</br>
+<!--		  <h3 class="text-center"> Financial Aid Package Information: </h3>-->
+		</br>
+		  <div class="form-group-row" id="amnt">
+		    <label for="amount" class="col-sm-2 col-form-label">Amount</label>
+		    <div class="col-sm-6">
+		      <input name="aid_amount" type="number" step=0.01 value=500.00 class="form-control" id="amount" placeholder="100.00">
+		    </div>
+		  </div>
+		</br>
+		</br>
+		</br>
+
+		  <div class="form-group-row" id="gtype">
+		    <label for="gtype" class="col-sm-2 col-form-label">Grant Type</label>
+		     <div class="col-sm-6">
+		       <select name="aid_type" class="form-control" id="gtypeselect">
+		         <option>calgranta</option>
+		         <option>calgrantb</option>
+		         <option>other</option>
+		       </select>
+		     </div>
+		    </div>
+		 </br>
+		</br>
+		</br>
+
+		   <div class="form-group row" id="date">
+		     <label for="date" class="col-sm-2 col-form-label">Date</label>
+		     <div class="col-sm-6">
+		       <input name="distribution_date" class="form-control" type="date" value="2016-12-04" id="example-date-input">
+		     </div>
+		   </div>
+		   <br>
+		   <button type="submit" class="btn btn-primary" id="report_submit">Submit</button>
+		   <br>
+
+							</div>
+
+						</form></div>
+
+
+			</div>
+
+
+</div>
+
+{%endblock%}

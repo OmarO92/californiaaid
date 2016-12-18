@@ -1,0 +1,170 @@
+body {
+  background: #75a3a3;
+  transition: background-color .5s;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+#topnavbar {
+    margin: 0;
+    background-color: #75a3a3;
+}
+#topnavbar.affix {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+.navbar-nav li a {
+	color: #fff !important;
+  font-weight: bold;
+	font-size:16px;
+}
+.active a {
+    background-color: #87CEFA !important;
+}
+#main {
+    color: #F5FaF4;
+    padding: 9px;
+}
+#banner {
+  text-align: center;
+  font-size: 50px;
+  font-weight: bold;
+  color: #fff;
+  background: #75a3a3;
+  letter-spacing: 4px;
+}
+#banner img {
+  margin-top: 8px;
+  width: 140px;
+  height: 140px;
+}
+table {
+  width: 50%;
+  margin: 0px auto;
+  float: none;
+}
+#header {
+  background-color: #fff;
+}
+#employeeheader{
+  font-weight: bold;
+}
+#distributionheader{
+  font-weight: bold;
+}
+#distributiontable {
+  font-weight: bold;
+  font-size: 16px;
+  width: 100%
+}
+.btn-primary {
+  font-weight: bold;
+}
+.btn-success{
+  background-color: #1A1A1A;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+
+th, td {
+  text-align: left;
+  padding: 8px;
+  color: #000000;
+}
+tr:nth-child(even){
+  background-color: #f2f2f2;
+}
+.tables {
+  background: #a2aaaa;
+}
+.tables a {
+  top: 10px;
+  font-weight: bold;
+  font-size: 20px;
+  color: #000;
+}
+#distributionlist {
+  margin-top: 20px;
+  background-color: #cccccc;
+}
+#bigreportgenerator{
+  margin-top: 20px;
+  background-color: #cccccc;
+  border-radius: 2px;
+}
+#bigreportgenerator h3 {
+  font-weight: bold;
+}
+
+#bigreportgenerator2{
+  margin-top: 20px;
+  margin-left: 0px;
+  background-color: #212321;
+  border-radius: 8px;
+
+}
+#bigreportgenerator2 h2{
+  padding: 10px;
+  font-weight: bold;
+  color: #fff;
+}
+#bigreportgenerator2 #amount {
+  font-weight: bold;
+  color: #75a3a3;
+}
+#new_report {
+  margin-bottom: 20px;
+  margin-left: 60px;
+  font-size: 16px;
+  background-color: #fff;
+  color: #212321;
+}
+#report_submit {
+  margin-bottom: 20px;
+  margin-left: 30px;
+  font-size: 15px;
+}
+#form {
+  background-color: #CCCCCC;
+  margin-top: 30px;
+  border-radius: 0px;
+  padding-bottom: 10px;
+}
+#form label {
+  color: #000;
+/*  background-color: #000;*/
+  font-size: 16px;
+  font-weight: bolder;
+	width: 140px;
+	text-align: right;
+	padding-right: 10px;
+}
+#form h1 {
+  color: #000;
+  font-weight: bold;
+}
+#form-col {
+  padding-bottom: 10px;
+}
+
+#formspecific {
+  padding-top: 20px;
+}
+#newdistroform  label {
+  text-align: right;
+}
+#button{
+  background: #22B573;
+  text-align: center;
+  padding: 6px 20px;
+  border: none;
+  font-size: 14px;
+  color: #fff;
+  font-weight: bold;
+}
+#budget {
+  background-color: #000;
+}

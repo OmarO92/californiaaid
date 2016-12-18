@@ -1,0 +1,18 @@
+{% extends 'cadb/index.html' %}
+{% block title %} Student - {{ block.super }} {% endblock %}
+{%block content%}
+<div class="container" id="form">
+  <!-- Student Info for distributing package-->
+  <div class="col-md-6" id="form-col">
+      <h1 class="text-center">Distribute Package</h1>
+         <form role="form" action="" method="post">
+            <div id="formspecific">
+              {% csrf_token %}
+              {{ form.as_p }}
+            </div>
+            <button type="submit" id="button">ENTER</button>
+          </form>
+    </div>
+</div>
+
+{% endblock %}

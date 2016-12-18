@@ -1,0 +1,78 @@
+{% extends 'cadb/index.html' %}
+{% block title %} Student - {{ block.super }} {% endblock %}
+{%block content%}
+<div class="container" id="bigreportgenerator">
+	<div class="col-md-12">
+		<div class="card report-card">
+		<h1 class="card-title text-center" id="distributionheader">Report Generator</h1>
+			<form method="GET" action="history/">
+				<div class="row">
+					<div class="col-lg-6">
+						<div class="input-group">
+							<span class="input-group-addon">
+								Date From:
+							</span>
+							<input name="date_from" id="date_to" type="date" class="form-control">
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="input-group">
+							<span class="input-group-addon">
+								Date To:
+							</span>
+							<input name="date_to" id="date_to" type="date" class="form-control">
+						</div>
+						<br>
+						<button type="submit" class="btn btn-primary" id="report_submit">Submit</button>
+						<br>
+					</div>
+
+				</form></div>
+
+
+	</div>
+	</div>
+</div>
+<div class="container" id="distributionlist">
+
+	<div class="col-md-12">
+    <h1 class="card-title text-center" id="distributionheader">Distribution List</h1>
+		<div class="card distribution-card">
+
+      <div class="card-block">
+				<!--<form action="distribute.html">-->
+						<form action="new_distribute_package.html">
+				    <button type="submit" value="Distribute Package" class="btn btn-primary">Distribute Package</button>
+				</form><br>
+			</div>
+
+			<table class="table table-striped" id="distributiontable">
+  			<thead>
+  				<tr>
+  					<th>Name</th>
+  					<th>Financial Aid Package: </th>
+  					<th>Date</th>
+            <th>Number</th>
+  				</tr>
+  			</thead>
+  			{% for EoooDistributedto in distribution_list %}
+  				<tr>
+  					<td>{{ EoooDistributedto.studentid.fname}} {{EoooDistributedto.studentid.lname}}</td>
+  					<td>{{ EoooDistributedto.fapackageid.ptype}} {{EoooDistributedto.fapackageid.amount}}</td>
+  					<td>{{ EoooDistributedto.ddate }}</td>
+            <td>{{EoooDistributedto.studentid}}</td>
+  					<td>
+  					<form action="distribution_receipt/{{EoooDistributedto.studentid}}">
+  					    <button type="submit" value="Distribution Receipt'" class="btn btn-success">Select</button>
+  					</form>
+  					</td>
+  				</tr>
+  			{% endfor %}
+			</table>
+
+
+		</div>
+	</div>
+
+</div>
+{%endblock%}

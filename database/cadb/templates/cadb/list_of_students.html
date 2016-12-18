@@ -1,0 +1,37 @@
+{% extends 'cadb/index.html' %}
+{% block title %} Student - {{ block.super }} {% endblock %}
+{%block content%}
+<div class="row" id="main_row">
+    <div class="col-md-8" id="main">
+        {% if latest_student_list %}
+         <table>
+          <tr id="header">
+            <th>ID</th>
+            <th>First</th>
+            <th>Last</th>
+            <th>Academic Standing</th>
+            <th>Income Status</th>
+          </tr>
+          {% for EoooStudent in latest_student_list %}
+            <tr class="tables">
+              <td>
+              <a href="/cadb/{{EoooStudent.student_id}}/">{{EoooStudent.student_id}}</a></td>
+              <td><a href="/cadb/{{EoooStudent.student_id}}/">{{EoooStudent.fname}}</a>
+              {%comment "need to fix cadb:detail.html"%}  <a href="{% url 'cadb:detail' EoooStudent.student_id %}">
+              {{ EoooStudent.student_id }}</a>{%endcomment%}</td>
+              <td><a href="/cadb/{{EoooStudent.student_id}}/">{{EoooStudent.lname}}</a></td>
+              <td><a href="/cadb/{{EoooStudent.student_id}}"> {{EoooStudent.academic_standing}}</a></td>
+              <td><a href="cadb/{{EoooStudent.student_id}}"> {{EoooStudent.income_status}}</a></td>
+              
+            </tr>
+          {% endfor %}
+          </table>
+          {% else %}
+          <!--<p> No students are avialable.</p>-->
+        {% endif %}
+      </div>
+</div>
+
+
+
+{% endblock %}

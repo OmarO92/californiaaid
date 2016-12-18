@@ -1,0 +1,32 @@
+{% extends 'cadb/index.html' %}
+{% block title %} Student - {{ block.super }} {% endblock %}
+{%block content%}
+<div class="row" id="main_row">
+    <div class="col-md-12" id="main">
+        {% if latest_employee_list %}
+        <h1 class="row text-center" id="employeeheader">Employees</h1>
+         <table>
+          <tr id="header">
+            <th>ID</th>
+            <th>First</th>
+            <th>Last</th>
+            <th>Department</th>
+          </tr>
+          {% for EoooEmployee in latest_employee_list %}
+            <tr class="tables">
+              <td><a href="/cadb/{{EoooEmployee.employee_id}}/">{{EoooEmployee.employee_id}}</td></a>
+              <td><a href="/cadb/{{EoooEmployee.employee_id}}/">{{EoooEmployee.fname}}</td></a>
+              <td><a href="/cadb/{{EoooEmployee.employee_id}}/">{{EoooEmployee.lname}}</td></a>
+              <td><a href="/cadb/{{EoooEmployee.employee_id}}/">{{EoooEmployee.departmentid.name}}</td></a>
+            </tr>
+          {% endfor %}
+          </table>
+          {% else %}
+          <!--<p> No students are avialable.</p>-->
+        {% endif %}
+      </div>
+</div>
+
+
+
+{% endblock %}

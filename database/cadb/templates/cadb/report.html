@@ -1,0 +1,28 @@
+{% extends 'cadb/index.html' %}
+{% block title %} Student - {{ block.super }} {% endblock %}
+{%block content%}
+
+<div class="row" id="main_row">
+    <div class="col-md-6" id="main">
+        {% if report_list %}
+         <table>
+          <tr id="header">
+            <th>ID</th>
+            <th>Type</th>
+            <th>Amount</th>
+          </tr>
+          {% for EoooFapackage in report_list %}
+            <tr class="tables">
+              <td><a href="/cadb/{{EoooFapackage.packageid}}/">{{EoooFapackage.packageid}}</a></td>
+              <td><a href="/cadb/{{EoooFapackage.ptype}}/">{{EoooFapackage.ptype}}</a></td>
+              <td><a href="/cadb/{{EoooFapackage.amount}}/">{{EoooFapackage.amount}}</a></td>
+            </tr>
+          {% endfor %}
+          </table>
+          {% else %}
+          <!--<p> No students are avialable.</p>-->
+        {% endif %}
+      </div>
+</div>
+
+{% endblock %}
